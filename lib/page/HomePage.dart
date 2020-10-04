@@ -72,11 +72,10 @@ Widget _myCakeListView(BuildContext context) {
     ),
     itemCount: cakes.length,
     scrollDirection: Axis.horizontal,
-    shrinkWrap: true,
     itemBuilder: (context, position) {
       Cake cake = cakes[position];
       return InkWell(
-        onTap: () => tabTopCake(position),
+        onTap: () => tabNewCake(position),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child: Stack(
@@ -105,7 +104,7 @@ Widget _myCakeListView(BuildContext context) {
                 child: Container(
                   color: Colors.deepPurple.withOpacity(0.8),
                   child: Padding(
-                    padding: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
                     child: Column(
                       children: [
                         Text(
@@ -172,7 +171,7 @@ Widget _myGridView(BuildContext context) {
       itemBuilder: (BuildContext context, int index) {
         Cake cake = cakes[index];
         return InkWell(
-          onTap: () => tabGridCake(index),
+          onTap: () => tabHotCake(index),
           child: Container(
             child: Card(
               elevation: 5,
@@ -263,6 +262,6 @@ Widget _myGridView(BuildContext context) {
       });
 }
 
-void tabTopCake(int position) {}
+void tabNewCake(int position) {}
 
-void tabGridCake(int position) {}
+void tabHotCake(int position) {}
